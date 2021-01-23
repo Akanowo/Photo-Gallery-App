@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 
+// Create photo schema
 const photoShema = new Schema({
   imageUrl: {
     type: String,
@@ -7,6 +8,8 @@ const photoShema = new Schema({
   }
 });
 
+// Create photo model
 const Photo = model('Photo', photoShema);
 
+// Export model
 module.exports = { Photo };
