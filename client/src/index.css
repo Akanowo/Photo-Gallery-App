@@ -71,13 +71,13 @@ label:hover {
 }
 
 .masonry-container {
-  /* max-width: 100%; */
+  max-width: 100%;
   margin: 5px auto;
+  display: inline;
 }
 
 .masonry-brick {
-  display: block;
-  margin: 5px auto;
+  display: flex;
   padding: auto 1.5rem;
 }
 
@@ -86,6 +86,7 @@ label:hover {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  cursor: zoom-in;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -95,8 +96,8 @@ label:hover {
 
 #toast-container {
   position: fixed !important;
-  bottom: 0px !important;
-  left: 0px !important;
+  top: 20px !important;
+  right: 20px !important;
 }
 
 /* MEDIA QUERIES */

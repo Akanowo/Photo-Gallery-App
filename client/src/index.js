@@ -11,9 +11,11 @@ import "./index.css";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+
 render(
   <Provider
-    store={createStore(reducers, composeEnhancers(applyMiddleware(thunk)))}
+    store={store}
   >
     <App />
   </Provider>,

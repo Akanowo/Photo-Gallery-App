@@ -5,6 +5,7 @@ import { FaUpload } from "react-icons/fa";
 import axios from "axios";
 
 import { uploadPhoto } from "../redux/actions";
+import Swal from 'sweetalert2';
 
 const Header = () => {
   // eslint-disable-next-line no-undef
@@ -25,10 +26,25 @@ const Header = () => {
             imageUrl: result.info.secure_url,
           })
           .then((response) => {
-            console.log(response.data.post);
+            Swal.fire({
+              toast: true,
+              text: 'Image Uploaded successfully'
+            }).then((result) => {
+              if(result.isConfirmed) {
+                window.location.reload();
+              }
+            });
           })
           .catch((err) => {
             console.log(err);
+            Swal.fire({
+              toast: true,
+              text: 'Image Uploaded successfully'
+            }).then((result) => {
+              if(result.isConfirmed) {
+                window.location.reload();
+              }
+            });
           });
       }
     }
